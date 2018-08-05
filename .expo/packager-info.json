@@ -1,8 +1,8 @@
 {
-  "expoServerPort": 19008,
-  "expoServerNgrokUrl": "https://km-vi5.charlesdeng.trax.exp.direct",
-  "packagerNgrokUrl": "https://packager.km-vi5.charlesdeng.trax.exp.direct",
-  "ngrokPid": 61863,
-  "packagerPort": 19010,
-  "packagerPid": 61840
+  "expoServerPort": null,
+  "expoServerNgrokUrl": null,
+  "packagerNgrokUrl": null,
+  "ngrokPid": null,
+  "packagerPort": null,
+  "packagerPid": null
 }
