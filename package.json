@@ -19,13 +19,20 @@
     "preset": "jest-expo"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "expo": "^25.0.0",
     "react": "16.2.0",
     "react-native": "0.52.0",
     "react-native-elements": "^0.19.1",
     "react-native-heading": "^1.1.1",
     "react-native-maps": "^0.21.0",
+<<<<<<< HEAD
     "react-native-sound": "^0.10.9",
+=======
+    "react-native-vector-icons": "^5.0.0",
+    "react-native-video": "^3.1.0",
+    "react-native-video-player": "^0.9.1",
+>>>>>>> bf7b556190773b74d1c29e7429518fd8d141cbda
     "react-native-youtube": "^1.1.0",
     "react-navigation": "^2.11.2"
   }
