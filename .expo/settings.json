@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "hostType": "lan",
+=======
+  "hostType": "localhost",
+>>>>>>> 1fef493cd20d163aa487231732ca7b229a26c879
   "lanType": "ip",
   "dev": true,
   "minify": false,

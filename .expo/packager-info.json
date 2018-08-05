@@ -1,8 +1,17 @@
 {
+<<<<<<< HEAD
   "expoServerPort": 19005,
   "expoServerNgrokUrl": "https://hv-cfz.danshendaisy.trax.exp.direct",
   "packagerNgrokUrl": "https://packager.hv-cfz.danshendaisy.trax.exp.direct",
   "ngrokPid": 14680,
   "packagerPort": 19007,
   "packagerPid": 18292
+=======
+  "expoServerPort": 19008,
+  "expoServerNgrokUrl": "https://km-vi5.charlesdeng.trax.exp.direct",
+  "packagerNgrokUrl": "https://packager.km-vi5.charlesdeng.trax.exp.direct",
+  "ngrokPid": 61863,
+  "packagerPort": 19010,
+  "packagerPid": 61840
+>>>>>>> 1fef493cd20d163aa487231732ca7b229a26c879
 }
