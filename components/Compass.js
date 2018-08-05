@@ -87,7 +87,7 @@ export default class Compass extends Component {
       <View style={styles.container}>
         <Text style={styles.text}>{display+'°'}</Text>
         <View style={styles.imageContainer} >
-          <Animated.Image resizeMode='contain' source={require('../assets/compass.png')}
+          <Animated.Image resizeMode='contain' source={require('../assets/icon.png')}
             style={{
             width:  deviceWidth  - 10, height: deviceHeight/2 - 10,
             left: deviceWidth /2 -  (deviceWidth   - 10)/2, top:  deviceHeight /2 - (deviceHeight/2  - 10)/2,
@@ -95,7 +95,7 @@ export default class Compass extends Component {
           }} />
         </View>
         <View style={styles.arrowContainer} >
-          <Image resizeMode='contain' source={require('../assets/arrow.png')} style={styles.arrow} />
+          <Image resizeMode='contain' source={require('../assets/icon.png')} style={styles.arrow} />
         </View>
       </View>
     );
