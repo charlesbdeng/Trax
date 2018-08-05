@@ -1,32 +1,102 @@
 import React, { Component } from 'react';
-import { Text, View, Animated, Easing, StyleSheet, Dimensions, WebView } from 'react-native';
+import { Text, View, Animated, Easing, StyleSheet, Dimensions, WebView, ScrollView, Image, TouchableOpacity } from 'react-native';
+import axios from 'axios';
+import Video from 'react-native-video';
+import VideoPlayer from 'react-native-video-player';
 
 export default class VideoList extends Component {
-    
-    constructor (){
-        super()
-        this.state={
+    static navigationOptions ={
+      title:"Stage"
+    }
+    constructor(props) {
+        super(props)
+        this.state = {
+            location:"Apple",
             uri:'',
-            location:''
+            artist: '',
+            tracks: []
         }
+        axios.post('http://05d0033b.ngrok.io/videoAndArtist',
+          // method: 'POST',
+          // headers: {
+          //   // Accept: 'application/json',
+          //   'Content-Type': 'application/json'
+          // },
+          {
+            location: this.state.location
+          })
+        .then((resp) => {
+          return JSON.parse(resp.data)
+        })
+        .then((json) => {
+          this.setState({
+            uri: json.url,
+            artist: json.artist,
+            tracks: json.tracks
+          })
+        })
+        .catch((error)=> {
+          console.error(error);
+        })
     }
 
-    getUri(location){}
+    // componentDidMount(){
+    //   console.log('componentDidMount')
+    //
+    //   fetch('http://05d0033b.ngrok.io/videoAndArtist', {
+    //     method: 'POST',
+    //     headers: {
+    //       // Accept: 'application/json',
+    //       'Content-Type': 'application/json'
+    //     },
+    //     body: JSON.stringify({
+    //       location: this.state.location
+    //     })
+    //   })
+    //   .then((resp) => {
+    //     console.log(resp)
+    //     return resp.json()})
+    //   .then((json) => {
+    //     this.setState({ uri: json.url })
+    //     this.setState({ artist: json.name, tracks: json.tracks})
+    //     console.log('TRACKS', JSON.parse(json.tracks))
+    //   })
+    //   .catch((error)=> {
+    //     console.error(error);
+    //   })
+    // }
+
+
 
     render(){
         return(
-    <View>        
-    <WebView
-            style={{flex:1, margin: 20}}
-            javaScriptEnabled={true}
-            source={{uri: 'https://youtu.be/AAnIJzqRHFI'}}
-     />
-    <WebView
-            style={{flex:1, margin:20}}
-          javaScriptEnabled={true}
-          source={{uri: 'https://www.youtube.com/embed/UifuuynvrlY'}}
-         />
-    </View>
-        )
+          <View >
+              <View
+                style={{marginTop: 20, height:300}}>
+            <WebView
+              source={{uri:this.state.uri}}
+              allowsInlineMediaPlayBack={true}
+            />
+          </View>
+
+          <View>
+            <Text>{this.state.artist}</Text>
+            <View style={{ height: 240, marginTop: 20}}>
+              <ScrollView horizontal={true}>
+                {this.state.tracks.map(
+                  (song) => {
+                    return(
+                      <View key={this.state.tracks.indexOf(song)}>
+                        <Image style={{width: 200, height: 200}} source={{uri: song.release.image}}></Image>
+                        <Text>{song.title}</Text>
+                      </View>)
+                    }
+                  )
+                }
+              </ScrollView>
+            </View>
+          </View>
+          </View>
+      )
     }
 }
