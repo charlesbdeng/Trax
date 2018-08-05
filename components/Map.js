@@ -83,7 +83,7 @@ const MarkerList = [
       }
     }
 ];
-class App extends React.Component {
+class Map extends React.Component {
   constructor(props)
   {
     super(props)
@@ -244,3 +244,5 @@ class App extends React.Component {
     );
   }
 }
+
+export default Map

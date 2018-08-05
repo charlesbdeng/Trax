@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Text, View, Animated, Easing, StyleSheet, Dimensions, WebView, ScrollView, Image, TouchableOpacity } from 'react-native';
+import { Text, View, Animated, Easing, StyleSheet, Dimensions, WebView, ScrollView, Image, TouchableOpacity, ImageBackground } from 'react-native';
 import axios from 'axios';
+
 
 export default class VideoList extends Component {
     static navigationOptions ={
@@ -9,12 +10,12 @@ export default class VideoList extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            location:"Apple",
+            location:"Land's End",
             uri:'',
             artist: '',
             tracks: []
         }
-        axios.post('http://05d0033b.ngrok.io/videoAndArtist',
+        axios.post('http://306e44b6.ngrok.io/videoAndArtist',
           // method: 'POST',
           // headers: {
           //   // Accept: 'application/json',
@@ -68,15 +69,22 @@ export default class VideoList extends Component {
 
     render(){
         return(
-          <View >
+           <ImageBackground style={styles.BG} source={require('../assets/background.png')} resizeMode='cover'>
+          <View>
+          <View style={styles.title}>
+          <Text style={styles.livenow}>Live Now</Text>
+        </View>
               <View
                 style={{marginTop: 20, height:300}}>
             <WebView
+               style={styles.video}
               source={{uri:this.state.uri}}
               allowsInlineMediaPlayBack={true}
             />
           </View>
-
+          <View style={styles.title2}>
+          <Text style={styles.livenow}>Live Now</Text>
+        </View>
           <View>
             <Text>{this.state.artist}</Text>
             <View style={{ height: 240, marginTop: 20}}>
@@ -95,6 +103,35 @@ export default class VideoList extends Component {
             </View>
           </View>
           </View>
+        </ImageBackground>
       )
     }
 }
+
+//styles
+const styles = StyleSheet.create({
+  BG:{
+      height:'100%',
+      width:'100%',
+  },
+  title:{
+      alignItems: 'center',
+      justifyContent:"center",
+      height: '20%',
+  },
+  livenow:{
+      color: "#ffffff",
+      fontSize: 36,
+      textAlign: 'center',
+      margin: 10,
+    },
+  video:{
+      flex:1,
+      margin:3,
+  },
+  title2:{
+      alignItems: 'center',
+      justifyContent:"center",
+      height: '42%',
+  }
+});
