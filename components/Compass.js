@@ -86,7 +86,7 @@ export default class Compass extends Component {
     return (
       <View style={styles.container}>
         <View style={styles.imageContainer} >
-          <Animated.Image resizeMode='contain' source={require('../assets/compass.png')}
+          <Animated.Image resizeMode='contain' source={require('../assets/icon.png')}
             style={{
             width:  20, height: 30,
             left: 15, top:  15,
@@ -94,7 +94,7 @@ export default class Compass extends Component {
           }} />
         </View>
         <View style={styles.arrowContainer} >
-          <Image resizeMode='contain' source={require('../assets/arrow.png')} style={styles.arrow} />
+          <Image resizeMode='contain' source={require('../assets/icon.png')} style={styles.arrow} />
         </View>
       </View>
     );
