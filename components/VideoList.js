@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { Text, View, Animated, Easing, StyleSheet, Dimensions, WebView, ScrollView, Image, TouchableOpacity, ImageBackground } from 'react-native';
 import axios from 'axios';
-import Video from 'react-native-video';
-import VideoPlayer from 'react-native-video-player';
 
 
 export default class VideoList extends Component {
