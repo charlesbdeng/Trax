@@ -1,8 +1,8 @@
 {
   "expoServerPort": 19000,
-  "expoServerNgrokUrl": "https://nw-vbt.danshendaisy.trax.exp.direct",
-  "packagerNgrokUrl": "https://packager.nw-vbt.danshendaisy.trax.exp.direct",
-  "ngrokPid": 10708,
+  "expoServerNgrokUrl": "https://7m-h75.charlesdeng.trax.exp.direct",
+  "packagerNgrokUrl": "https://packager.7m-h75.charlesdeng.trax.exp.direct",
+  "ngrokPid": 1524,
   "packagerPort": 19001,
-  "packagerPid": 21312
+  "packagerPid": 1508
 }

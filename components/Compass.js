@@ -85,16 +85,17 @@ export default class Compass extends Component {
 
     return (
       <View style={styles.container}>
+        <Text style={styles.text}>{display+'°'}</Text>
         <View style={styles.imageContainer} >
-          <Animated.Image resizeMode='contain' source={require('../assets/icon.png')}
+          <Animated.Image resizeMode='contain' source={require('../assets/compass.png')}
             style={{
-            width:  20, height: 30,
-            left: 15, top:  15,
+            width:  deviceWidth  - 10, height: deviceHeight/2 - 10,
+            left: deviceWidth /2 -  (deviceWidth   - 10)/2, top:  deviceHeight /2 - (deviceHeight/2  - 10)/2,
             transform: [{rotate: spin}],
           }} />
         </View>
         <View style={styles.arrowContainer} >
-          <Image resizeMode='contain' source={require('../assets/icon.png')} style={styles.arrow} />
+          <Image resizeMode='contain' source={require('../assets/arrow.png')} style={styles.arrow} />
         </View>
       </View>
     );
@@ -108,27 +109,25 @@ const deviceHeight =  Dimensions.get('window').height
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'flex-end',
-    justifyContent: 'flex-start',
-    backgroundColor:'#FDFAEB'
+    alignItems: 'center',
+    justifyContent: 'center',
   },
-
+  text: {
+    color: '#263544',
+    fontSize: 80,
+    transform: ([{translateY: -(deviceHeight/2 - (deviceHeight/2  - 10)/2) - 50 }])
+  },
   imageContainer: {
-    height:17,
-    width:17,
-    justifyContent:'flex-start',
-    alignItems:'flex-end'
+    ...StyleSheet.absoluteFillObject,
   },
   arrowContainer: {
-    height:6,
-    width:6,
-    justifyContent:'flex-start'
+    ...StyleSheet.absoluteFillObject,
   },
   arrow: {
-    width: 6,
-    height: 6,
-    left: 6,
-    top: 6,
+    width: deviceWidth/7,
+    height: deviceWidth/7,
+    left: deviceWidth /2 - (deviceWidth/7)/2,
+    top:  deviceHeight /2  - (deviceWidth/7)/2,
     opacity: 0.9
   }
 });

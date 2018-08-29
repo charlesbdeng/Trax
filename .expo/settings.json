@@ -1,11 +1,7 @@
 {
-  "hostType": "lan",
+  "hostType": "tunnel",
   "lanType": "ip",
   "dev": true,
   "minify": false,
-<<<<<<< HEAD
-  "urlRandomness": "xw-55s"
-=======
-  "urlRandomness": "nw-vbt"
->>>>>>> master
+  "urlRandomness": "7m-h75"
 }
