@@ -1,7 +1,25 @@
 import React, { Component } from 'react';
 import { Text, View, StyleSheet, Image, Animated, Easing, Dimensions} from 'react-native';
 import { Location, Permissions } from 'expo';
+const proportions={
+  animated:{
+    width: 27,
+    height:28.5,
+    left:7.5,
+    top:29.25,
+  },
+  transform: -23.375,
+  arrow:{
+    width:6,
+    height:6,
+    left: 6,
+    top: 27
+  }
 
+
+
+
+}
 export default class Compass extends Component {
   constructor() {
     super();
@@ -85,49 +103,55 @@ export default class Compass extends Component {
 
     return (
       <View style={styles.container}>
+        <View style={{marginBottom:-12.5, marginRight:-16.2}}>
         <Text style={styles.text}>{display+'°'}</Text>
-        <View style={styles.imageContainer} >
+      </View>
+
+        <View style={[styles.imageContainer,{marginTop:-5}]} >
           <Animated.Image resizeMode='contain' source={require('../assets/compass.png')}
             style={{
-            width:  deviceWidth  - 10, height: deviceHeight/2 - 10,
-            left: deviceWidth /2 -  (deviceWidth   - 10)/2, top:  deviceHeight /2 - (deviceHeight/2  - 10)/2,
+            width:  27, height: 28.5,
+            left: 7.5, top:  29.25,
             transform: [{rotate: spin}],
           }} />
         </View>
-        <View style={styles.arrowContainer} >
+
+        <View style={[styles.arrowContainer,{marginTop:-5}]} >
           <Image resizeMode='contain' source={require('../assets/arrow.png')} style={styles.arrow} />
         </View>
+
       </View>
     );
   }
 }
 
 // Device dimensions so we can properly center the images set to 'position: absolute'
-const deviceWidth  =  Dimensions.get('window').width
-const deviceHeight =  Dimensions.get('window').height
+
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor:'#FDFAEB'
   },
   text: {
-    color: '#263544',
-    fontSize: 80,
-    transform: ([{translateY: -(deviceHeight/2 - (deviceHeight/2  - 10)/2) - 50 }])
+    color: 'black',
+    fontSize: 8,
+    transform: ([{translateY:-23.375 }])
   },
+
   imageContainer: {
     ...StyleSheet.absoluteFillObject,
   },
   arrowContainer: {
-    ...StyleSheet.absoluteFillObject,
+  ...StyleSheet.absoluteFillObject,
   },
   arrow: {
-    width: deviceWidth/7,
-    height: deviceWidth/7,
-    left: deviceWidth /2 - (deviceWidth/7)/2,
-    top:  deviceHeight /2  - (deviceWidth/7)/2,
+    width: 6,
+    height: 6,
+    left: 18,
+    top: 27,
     opacity: 0.9
   }
 });

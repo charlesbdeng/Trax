@@ -3,5 +3,5 @@
 A simple compass built with React Native and Expo. <br><br>
 
 <p align='center'>
-<img src="https://thumbs.gfycat.com/WeirdInconsequentialAmethystgemclam-size_restricted.gif">
+<React-Native Mobile App utilizing Expo and Twitch API's for music lovers to stream events happening anywhere in the world.>
   </p>
